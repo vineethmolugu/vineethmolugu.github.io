@@ -1,4 +1,11 @@
-Vineeth Portfolio V2 — animated GitHub Pages site.
+VINEETH PORTFOLIO V3
 
-Replace YOUR_EMAIL_HERE and YOUR_LINKEDIN_URL_HERE in index.html before sharing publicly.
-Upload index.html, style.css and script.js to the repository root.
+Contact links already added:
+Email: vineethmolugu171299@gmail.com
+LinkedIn: https://www.linkedin.com/in/vineeth-molugu-15a026268/
+X/Twitter: @vineethkum17
+
+Upload index.html, style.css, and script.js to the root of:
+vineethmolugu/vineethmolugu.github.io
+
+README.txt is optional for the live site.
