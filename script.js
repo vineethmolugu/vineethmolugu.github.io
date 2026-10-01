@@ -33,3 +33,51 @@ if(matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').match
     glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px';
   },{passive:true});
 }
+
+// V10: single-view navigation inspired by the supplied reference.
+// Only the selected page is shown; sections transition in/out instead of forming one long page.
+const routeMap={
+  home:['home','.home-extra'],
+  about:['about','.about-extra'],
+  experience:['experience'],
+  work:['work'],
+  skills:['skills','.skills-extra'],
+  contact:['contact']
+};
+const transition=document.createElement('div');
+transition.className='routeTransition';
+document.body.appendChild(transition);
+document.body.classList.add('route-mode');
+
+function routeName(){
+  const h=(location.hash||'#home').slice(1);
+  return routeMap[h]?h:'home';
+}
+function activateRoute(name, animate=true){
+  const all=document.querySelectorAll('main > section, main > .ticker');
+  all.forEach(el=>el.classList.remove('route-active'));
+  (routeMap[name]||routeMap.home).forEach(key=>{
+    if(key.startsWith('.')) document.querySelectorAll(key).forEach(el=>el.classList.add('route-active'));
+    else document.getElementById(key)?.classList.add('route-active');
+  });
+  document.body.className=[...document.body.classList].filter(x=>!x.startsWith('route-')).join(' ');
+  document.body.classList.add('route-mode','route-'+name);
+  document.querySelectorAll('nav .navRoute').forEach(a=>a.classList.toggle('active',a.dataset.route===name));
+  scrollTo(0,0);
+}
+function navigate(name){
+  if(name===routeName()){activateRoute(name,false);return}
+  transition.classList.remove('go'); void transition.offsetWidth; transition.classList.add('go');
+  setTimeout(()=>{
+    history.pushState(null,'','#'+name);
+    activateRoute(name,false);
+  },300);
+}
+document.querySelectorAll('.navRoute').forEach(a=>a.addEventListener('click',e=>{
+  const name=a.dataset.route;
+  if(!name) return;
+  e.preventDefault(); navigate(name);
+}));
+addEventListener('popstate',()=>activateRoute(routeName(),false));
+addEventListener('hashchange',()=>activateRoute(routeName(),false));
+activateRoute(routeName(),false);

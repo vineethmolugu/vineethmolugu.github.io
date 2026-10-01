@@ -1,14 +1,17 @@
-V9 — IMPACT COPY
+V10 — CLICK-TO-VIEW NAVIGATION
 
-This version keeps the V8.1 dark infrastructure design, effects and contact icons,
-but refreshes portfolio wording to be more memorable and energetic while staying
-grounded in the supplied resume.
+Based on the interaction style in the supplied reference recording.
 
-Key positioning:
-- Current title remains Network Engineer at Samaritan Healthcare.
-- Overall positioning remains Data Center Operations + Network Infrastructure.
-- Highlights 4+ years, 400+ server deployments, 300+ hardware repairs,
-  Arista deployment, fiber validation, remote hands and production cutovers.
-- No unsupported GPU/Supermicro or other invented experience was added.
+Changes:
+- Home is the only main content visible on first load.
+- About appears only after clicking About.
+- Experience appears only after clicking Experience.
+- Work appears only after clicking Work.
+- Expertise appears only after clicking Expertise.
+- Contact appears only after clicking Contact.
+- Added full-screen animated transition between views.
+- Added active navigation indicator and entrance animation.
+- Kept the dark data-center/network theme, V9 copy, large icon-only contact links, and existing effects.
+- URLs use hashes (#about, #work, etc.) so browser back/forward still works.
 
-Upload all files in this ZIP to the GitHub Pages repository root.
+Upload all files to the root of vineethmolugu.github.io and replace existing files.
