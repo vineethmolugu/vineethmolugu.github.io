@@ -22,3 +22,7 @@ FINAL V16.1: User-facing CV wording changed to Resume for U.S. technical job app
 V17: Fixed right navigation placement by moving it outside the header. It is now viewport-positioned in the center-right/lower-right hero area shown in the user's markup.
 
 V20 FINAL: Contact page removed. Header navigation is positioned inside the top header band. Final professional catchline added immediately above the existing Email/LinkedIn/X icons: "Ready for the next rack, cutover & challenge." with supporting line about reliable data center and network infrastructure. Existing premium page transitions and hover effects retained.
+
+V21: Moved the existing Email, LinkedIn and X icons out of the upper-left area. The final catchline and supporting sentence now sit in the marked lower-center/right area, with the three large social icons directly underneath.
+
+V22: Styled the final connection message as a premium glass/accent panel directly above Email/LinkedIn/X. Added subtle entrance reveal, blue gradient emphasis on 'rack, cutover & challenge.', animated light sheen, accent line, and coordinated icon entrance.
