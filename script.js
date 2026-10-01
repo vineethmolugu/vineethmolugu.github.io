@@ -79,3 +79,19 @@ document.querySelectorAll('.navRoute').forEach(a=>a.addEventListener('click',e=>
 addEventListener('popstate',()=>activateRoute(routeName()));
 addEventListener('hashchange',()=>activateRoute(routeName()));
 activateRoute(routeName());
+
+// V15 navigation transition accent
+document.addEventListener("DOMContentLoaded",()=>{
+  const flash=document.createElement("div");
+  flash.id="v15Flash";
+  document.body.appendChild(flash);
+  document.querySelectorAll(".navRoute").forEach(link=>{
+    link.addEventListener("click",()=>{
+      flash.classList.remove("play");
+      void flash.offsetWidth;
+      flash.classList.add("play");
+      document.body.classList.add("v15-leaving");
+      setTimeout(()=>document.body.classList.remove("v15-leaving"),320);
+    });
+  });
+});
