@@ -1567,3 +1567,44 @@ body > nav.rightRail a:hover{
   #home .finalConnectBlock::before{opacity:.28!important;}
   #home .finalConnectBlock::after{opacity:.48!important;}
 }
+
+
+/* ===== V33 — ONE-PAGE RECRUITER FLOW / CLEAN SEAMLESS HERO ===== */
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body.route-mode main,main{padding-right:0!important}
+body.route-mode main>section,body.route-mode main>.ticker{display:block!important;opacity:1!important;visibility:visible!important;transform:none!important;position:relative!important;pointer-events:auto!important}
+body.route-mode .home-extra,body.route-mode .about-extra,body.route-mode .skills-extra{display:block!important}
+.route-leaving,#v15Flash{display:none!important}
+@media (min-width:1100px){
+  header{height:84px!important;padding:0 5.25vw!important;position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:100!important;background:rgba(4,17,34,.94)!important;backdrop-filter:blur(16px)!important}
+  body>nav.rightRail{position:fixed!important;z-index:101!important;top:0!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;height:84px!important;display:flex!important;align-items:center!important;gap:25px!important;width:auto!important;background:transparent!important;border:0!important;box-shadow:none!important}
+  body>nav.rightRail a{width:auto!important;height:auto!important;padding:0!important;display:flex!important;align-items:center!important;gap:8px!important;background:transparent!important;border:0!important;box-shadow:none!important;font-size:14px!important;font-weight:700!important}
+  body>nav.rightRail .railIcon{width:38px!important;height:38px!important;display:grid!important;place-items:center!important;border-radius:12px!important;background:rgba(18,42,67,.72)!important;border:1px solid rgba(118,178,235,.2)!important}
+  #home.hero{margin-top:84px!important;height:calc(100vh - 84px)!important;min-height:720px!important;padding:48px 370px 130px 6vw!important;background-size:cover!important;background-position:center!important;overflow:hidden!important}
+  #home .heroCopy{max-width:760px!important;z-index:6!important}
+  #home h1{font-size:clamp(56px,5vw,80px)!important;line-height:.94!important;max-width:730px!important;margin-bottom:24px!important}
+  #home .name{margin:20px 0 14px!important}
+  #home .intro{max-width:700px!important;font-size:15px!important;line-height:1.6!important}
+  #home .buttons{margin-top:22px!important}
+  #home .metrics{left:6vw!important;bottom:30px!important;width:min(760px,57vw)!important;height:88px!important;z-index:8!important}
+  #home .finalConnectBlock{position:absolute!important;z-index:7!important;right:3.2vw!important;left:auto!important;top:50%!important;bottom:auto!important;transform:translateY(-48%)!important;width:310px!important;max-width:310px!important;padding:26px 18px 24px 34px!important;display:flex!important;flex-direction:column!important;gap:18px!important;background:linear-gradient(90deg,rgba(5,24,48,0),rgba(7,35,72,.30) 35%,rgba(8,43,91,.44))!important;mask-image:none!important;-webkit-mask-image:none!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+  #home .finalConnectBlock::before{content:''!important;position:absolute!important;inset:-25px -30px!important;background:radial-gradient(ellipse at center,rgba(23,104,218,.16),transparent 68%)!important;opacity:1!important;pointer-events:none!important}
+  #home .finalConnectBlock::after{content:''!important;position:absolute!important;right:-70px!important;bottom:-65px!important;width:220px!important;height:220px!important;border-radius:50%!important;background:repeating-radial-gradient(circle,transparent 0 12px,rgba(58,151,255,.08) 13px 14px)!important;opacity:.55!important;pointer-events:none!important}
+  #home .contactCurveGlow{display:none!important}
+  #home .finalConnectCopy{z-index:2!important}
+  #home .finalConnectCopy::before{width:50px!important;margin-bottom:14px!important}
+  #home .finalConnectTitle{font-size:28px!important;line-height:1.08!important}
+  #home .finalConnectRule{width:125px!important;margin:16px 0!important}
+  #home .finalConnectCopy p{max-width:265px!important;font-size:13px!important;line-height:1.55!important}
+  #home .homeSocials{z-index:2!important;gap:8px!important}
+  #home .homeSocial{height:68px!important;grid-template-columns:58px 1fr 22px!important;gap:13px!important}
+  #home .homeSocial i{width:54px!important;height:54px!important;font-size:23px!important;border-width:1px!important}
+  #home .homeSocial small{font-size:9px!important;margin-bottom:3px!important}
+  #home .homeSocial strong{font-size:17px!important}
+  #home .homeSocial b{font-size:22px!important}
+  .section,.work{scroll-margin-top:84px!important}
+}
+@media (max-width:1099px){
+  body{padding-top:0!important}.route-mode main>section,.route-mode main>.ticker{display:block!important}
+  #home .finalConnectBlock{position:relative!important;inset:auto!important;transform:none!important;width:auto!important;max-width:none!important;margin:35px 0 0!important;mask-image:none!important;-webkit-mask-image:none!important}
+}
