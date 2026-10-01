@@ -34,8 +34,7 @@ if(matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').match
   },{passive:true});
 }
 
-// V10: single-view navigation inspired by the supplied reference.
-// Only the selected page is shown; sections transition in/out instead of forming one long page.
+// V11: single-view navigation with a subtle fade / lift transition.
 const routeMap={
   home:['home','.home-extra'],
   about:['about','.about-extra'],
@@ -44,40 +43,39 @@ const routeMap={
   skills:['skills','.skills-extra'],
   contact:['contact']
 };
-const transition=document.createElement('div');
-transition.className='routeTransition';
-document.body.appendChild(transition);
 document.body.classList.add('route-mode');
-
 function routeName(){
   const h=(location.hash||'#home').slice(1);
   return routeMap[h]?h:'home';
 }
-function activateRoute(name, animate=true){
-  const all=document.querySelectorAll('main > section, main > .ticker');
-  all.forEach(el=>el.classList.remove('route-active'));
+function activateRoute(name){
+  document.querySelectorAll('main > section, main > .ticker').forEach(el=>el.classList.remove('route-active'));
   (routeMap[name]||routeMap.home).forEach(key=>{
     if(key.startsWith('.')) document.querySelectorAll(key).forEach(el=>el.classList.add('route-active'));
     else document.getElementById(key)?.classList.add('route-active');
   });
-  document.body.className=[...document.body.classList].filter(x=>!x.startsWith('route-')).join(' ');
-  document.body.classList.add('route-mode','route-'+name);
+  [...document.body.classList].filter(x=>x.startsWith('route-')&&x!=='route-mode').forEach(x=>document.body.classList.remove(x));
+  document.body.classList.add('route-'+name);
   document.querySelectorAll('nav .navRoute').forEach(a=>a.classList.toggle('active',a.dataset.route===name));
-  scrollTo(0,0);
+  scrollTo({top:0,left:0,behavior:'instant'});
 }
+let switching=false;
 function navigate(name){
-  if(name===routeName()){activateRoute(name,false);return}
-  transition.classList.remove('go'); void transition.offsetWidth; transition.classList.add('go');
+  if(switching||name===routeName()) return;
+  switching=true;
+  document.body.classList.add('route-leaving');
   setTimeout(()=>{
     history.pushState(null,'','#'+name);
-    activateRoute(name,false);
-  },300);
+    document.body.classList.remove('route-leaving');
+    activateRoute(name);
+    switching=false;
+  },220);
 }
 document.querySelectorAll('.navRoute').forEach(a=>a.addEventListener('click',e=>{
   const name=a.dataset.route;
   if(!name) return;
   e.preventDefault(); navigate(name);
 }));
-addEventListener('popstate',()=>activateRoute(routeName(),false));
-addEventListener('hashchange',()=>activateRoute(routeName(),false));
-activateRoute(routeName(),false);
+addEventListener('popstate',()=>activateRoute(routeName()));
+addEventListener('hashchange',()=>activateRoute(routeName()));
+activateRoute(routeName());

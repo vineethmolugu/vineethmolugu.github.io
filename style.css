@@ -378,3 +378,85 @@ body.route-mode .reveal{opacity:1;transform:none}
  header nav a{font-size:11px}
  body.route-mode .section{padding-top:80px}
 }
+
+/* V11 — calmer, premium page transitions + resume download */
+.resumeNav{display:inline-flex;align-items:center;gap:.45rem}
+.resumeNav i,.connect i{font-size:.8em}
+.routeTransition{display:none!important}
+.route-mode main>section.route-active,.route-mode main>.ticker.route-active{animation:pageEnter .62s cubic-bezier(.22,.8,.24,1) both;transform-origin:50% 45%}
+body.route-leaving main>section.route-active,body.route-leaving main>.ticker.route-active{animation:pageLeave .24s cubic-bezier(.4,0,1,1) both;pointer-events:none}
+@keyframes pageEnter{0%{opacity:0;transform:translateY(18px) scale(.992);filter:blur(7px)}55%{filter:blur(0)}100%{opacity:1;transform:none;filter:none}}
+@keyframes pageLeave{0%{opacity:1;transform:none;filter:none}100%{opacity:0;transform:translateY(-10px) scale(.996);filter:blur(3px)}}
+@media (prefers-reduced-motion:reduce){.route-mode main>section.route-active,.route-mode main>.ticker.route-active,body.route-leaving main>section.route-active,body.route-leaving main>.ticker.route-active{animation:none!important}}
+
+
+/* V12 — large vertical side navigation */
+@media(min-width:901px){
+  header{padding-left:34px;padding-right:34px}
+  header .sideNav{
+    position:fixed;left:24px;top:50%;transform:translateY(-50%);
+    z-index:9000;display:flex;flex-direction:column;gap:10px;
+    width:64px;padding:10px 7px;border:1px solid rgba(137,202,255,.20);
+    border-radius:22px;background:rgba(7,24,40,.76);backdrop-filter:blur(16px);
+    box-shadow:0 20px 55px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.05);
+    overflow:visible;
+  }
+  header .sideNav a{
+    width:50px;height:50px;min-width:50px;padding:0;border-radius:15px;
+    display:flex;align-items:center;justify-content:center;opacity:.72;
+    color:#d8ecff;background:transparent;border:1px solid transparent;
+    transition:transform .34s cubic-bezier(.2,.8,.2,1),background .3s ease,color .3s ease,box-shadow .3s ease,border-color .3s ease;
+  }
+  header .sideNav a i{font-size:21px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  header .sideNav a span{
+    position:absolute;left:66px;white-space:nowrap;padding:8px 11px;border-radius:9px;
+    background:#0d263d;color:#eef8ff;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    opacity:0;transform:translateX(-8px);pointer-events:none;
+    box-shadow:0 10px 25px rgba(0,0,0,.24);transition:.25s ease;
+  }
+  header .sideNav a:hover span{opacity:1;transform:translateX(0)}
+  header .sideNav a:hover,header .sideNav a.active{
+    opacity:1;color:#fff;background:linear-gradient(145deg,rgba(65,155,255,.35),rgba(78,210,255,.12));
+    border-color:rgba(106,201,255,.42);transform:translateX(5px) scale(1.07);
+    box-shadow:0 8px 25px rgba(36,139,255,.20),0 0 20px rgba(83,201,255,.10);
+  }
+  header .sideNav a:hover i,header .sideNav a.active i{transform:scale(1.13)}
+  header .sideNav a::after{display:none}
+  header .sideNav .resumeNav{margin-top:7px;border-top-color:rgba(137,202,255,.18)}
+  header .logo{margin-left:58px}
+}
+@media(max-width:900px){
+  header .sideNav a{display:flex;align-items:center;gap:6px}
+  header .sideNav a i{font-size:13px}
+  header .sideNav a span{display:inline}
+}
+
+/* V13 — recruiter-friendly social icons directly on Home */
+.homeSocials{
+  display:flex;align-items:center;gap:16px;margin-top:24px;
+}
+.homeSocial{
+  position:relative;width:58px;height:58px;border-radius:50%;
+  display:grid;place-items:center;text-decoration:none;color:#eaf7ff;
+  background:rgba(9,30,49,.72);border:1px solid rgba(125,211,255,.34);
+  box-shadow:0 12px 34px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);overflow:hidden;
+  transition:transform .34s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease,color .3s ease;
+  animation:socialFloat 4.8s ease-in-out infinite;
+}
+.homeSocial:nth-child(2){animation-delay:.45s}.homeSocial:nth-child(3){animation-delay:.9s}
+.homeSocial::before{
+  content:"";position:absolute;inset:-40%;border-radius:50%;
+  background:radial-gradient(circle,rgba(83,203,255,.28),transparent 60%);
+  opacity:0;transform:scale(.5);transition:.35s ease;
+}
+.homeSocial i{position:relative;z-index:1;font-size:25px;transition:transform .32s ease}
+.homeSocial:hover{
+  transform:translateY(-7px) scale(1.1);color:#fff;border-color:rgba(121,222,255,.82);
+  box-shadow:0 18px 42px rgba(20,142,230,.28),0 0 26px rgba(74,200,255,.22);
+}
+.homeSocial:hover::before{opacity:1;transform:scale(1)}
+.homeSocial:hover i{transform:scale(1.12)}
+@keyframes socialFloat{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@media(max-width:700px){.homeSocials{gap:12px;margin-top:20px}.homeSocial{width:52px;height:52px}.homeSocial i{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.homeSocial{animation:none}}

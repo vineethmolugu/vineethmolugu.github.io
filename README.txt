@@ -1,17 +1,12 @@
-V10 — CLICK-TO-VIEW NAVIGATION
+V13 — HOME SOCIAL ICONS
 
-Based on the interaction style in the supplied reference recording.
+Changes from V12:
+- Added large Email, LinkedIn and X icons directly on the Home page.
+- No text underneath the icons.
+- Added subtle floating, glow and hover-lift animations.
+- Email opens Gmail compose with vineethmolugu171299@gmail.com already in the To field.
+- LinkedIn and X open Vineeth's profiles.
+- Kept the vertical side navigation, smooth view transitions and Resume download.
+- Corrected the home metric label to “Server Deployments”.
 
-Changes:
-- Home is the only main content visible on first load.
-- About appears only after clicking About.
-- Experience appears only after clicking Experience.
-- Work appears only after clicking Work.
-- Expertise appears only after clicking Expertise.
-- Contact appears only after clicking Contact.
-- Added full-screen animated transition between views.
-- Added active navigation indicator and entrance animation.
-- Kept the dark data-center/network theme, V9 copy, large icon-only contact links, and existing effects.
-- URLs use hashes (#about, #work, etc.) so browser back/forward still works.
-
-Upload all files to the root of vineethmolugu.github.io and replace existing files.
+Upload every file/folder in this package to the root of vineethmolugu.github.io and replace the existing versions.
