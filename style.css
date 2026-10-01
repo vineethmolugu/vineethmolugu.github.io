@@ -234,3 +234,13 @@ body:after{
 @media(prefers-reduced-motion:reduce){
  body:after,.section:after,.work:after,.credentials:after{animation:none!important}
 }
+
+/* V8.1 contact icons */
+.contactIcon{
+  font-size:18px;
+  margin-right:9px;
+  vertical-align:-2px;
+  color:#64c7ec;
+  transition:transform .25s ease,color .25s ease;
+}
+.links a:hover .contactIcon{transform:translateY(-2px) scale(1.08);color:#8bdcff}
