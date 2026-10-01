@@ -20,3 +20,5 @@ V16 FINAL: individual right-side menu items now zoom to 115% on hover with brigh
 FINAL V16.1: User-facing CV wording changed to Resume for U.S. technical job applications.
 
 V17: Fixed right navigation placement by moving it outside the header. It is now viewport-positioned in the center-right/lower-right hero area shown in the user's markup.
+
+V18: Removed the standalone Contact page and Contact navigation item. Added an integrated Home connection area with a catchline and large, clearly labeled Email, LinkedIn, and X cards. Right-side navigation was enlarged for clarity while retaining zoom/glow and page transitions.

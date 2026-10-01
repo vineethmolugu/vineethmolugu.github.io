@@ -625,3 +625,115 @@ body > nav.rightRail a:hover span:last-child{
     transform:translateX(-8px) scale(1.10)!important;
   }
 }
+
+/* V18 — Home-page connection area + larger/clearer right-side navigation */
+body > nav.rightRail{
+  top:61vh!important;
+  right:3.6vw!important;
+}
+body > nav.rightRail a{
+  min-width:152px!important;
+  min-height:70px!important;
+  padding:10px 12px!important;
+  gap:10px!important;
+  font-size:16px!important;
+  font-weight:800!important;
+  opacity:.96!important;
+}
+body > nav.rightRail .railIcon{
+  width:44px!important;
+  height:44px!important;
+  min-width:44px!important;
+  font-size:22px!important;
+  display:grid!important;
+  place-items:center!important;
+}
+body > nav.rightRail a:hover{
+  transform:translateX(-18px) scale(1.14)!important;
+}
+
+/* Connection block positioned in the upper-right area highlighted by the user */
+#home{position:relative!important;}
+.homeConnect{
+  position:absolute;
+  top:-62px;
+  right:3.5vw;
+  width:min(760px,48vw);
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+  z-index:80;
+}
+.homeConnectCopy{
+  max-width:330px;
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.homeConnectEyebrow{
+  font-size:10px;
+  letter-spacing:.20em;
+  color:#82c9ff;
+  font-weight:900;
+}
+.homeConnectCopy strong{
+  color:#fff;
+  font-size:15px;
+  line-height:1.25;
+}
+.homeConnectCopy > span:last-child{
+  color:rgba(219,234,251,.67);
+  font-size:11px;
+  line-height:1.35;
+}
+.homeConnectLinks{
+  display:flex;
+  gap:9px;
+}
+.connectCard{
+  min-width:122px;
+  height:58px;
+  padding:8px 11px;
+  border:1px solid rgba(143,196,255,.24);
+  border-radius:14px;
+  background:rgba(12,29,50,.78);
+  backdrop-filter:blur(14px);
+  display:flex;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  transition:.32s cubic-bezier(.16,1,.3,1);
+}
+.connectCard:hover{
+  transform:translateY(-5px) scale(1.06);
+  border-color:rgba(131,211,255,.7);
+  background:rgba(31,77,125,.72);
+  box-shadow:0 15px 36px rgba(41,137,255,.22);
+}
+.connectIcon{
+  width:34px;height:34px;min-width:34px;
+  border-radius:10px;
+  display:grid;place-items:center;
+  color:#fff;
+  font-size:19px;
+  font-weight:900;
+  background:rgba(93,166,255,.18);
+  border:1px solid rgba(143,202,255,.28);
+}
+.connectText{display:flex;flex-direction:column;line-height:1.1}
+.connectText b{font-size:12px;color:#fff}
+.connectText small{font-size:9px;color:#9fc8ef;margin-top:4px;white-space:nowrap}
+
+@media(max-width:1200px){
+  .homeConnectCopy{display:none}
+  .homeConnect{width:auto;right:2vw}
+}
+@media(max-width:800px){
+  .homeConnect{position:relative;top:auto;right:auto;width:100%;margin:24px 0 0;justify-content:flex-start}
+  .homeConnectLinks{flex-wrap:wrap}
+  .connectCard{min-width:105px}
+}
