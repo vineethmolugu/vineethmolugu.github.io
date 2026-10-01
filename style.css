@@ -1269,3 +1269,59 @@ body > nav.rightRail a:hover{
     box-shadow:0 20px 40px rgba(0,0,0,.34),0 0 30px rgba(69,157,255,.24),inset 0 1px rgba(255,255,255,.13)!important;
   }
 }
+
+/* ===== V27 FINAL FIX: visible contact panel in the reserved right gutter ===== */
+@media (min-width:1100px){
+  body.route-mode main{padding-right:220px!important;overflow:visible!important;}
+  body.route-mode #home.hero{overflow:visible!important;}
+  #home .finalConnectBlock{
+    position:absolute!important;
+    left:calc(100% + 18px)!important;
+    right:auto!important;
+    top:50%!important;
+    bottom:auto!important;
+    transform:translateY(-43%)!important;
+    width:184px!important;
+    max-width:184px!important;
+    z-index:500!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+  }
+  #home .finalConnectCopy{
+    width:184px!important;
+    padding:18px 13px 16px!important;
+    margin:0 0 16px!important;
+    text-align:center!important;
+    border:1px solid rgba(119,190,255,.28)!important;
+    border-radius:19px!important;
+    background:linear-gradient(155deg,rgba(12,32,55,.96),rgba(17,48,80,.88))!important;
+    box-shadow:0 20px 48px rgba(0,0,0,.32),0 0 30px rgba(74,153,255,.10)!important;
+    backdrop-filter:blur(18px) saturate(145%)!important;
+  }
+  #home .finalConnectTitle{font-size:20px!important;line-height:1.12!important;font-weight:800!important;}
+  #home .finalConnectTitle em{color:#86b7ff!important;font-style:normal!important;}
+  #home .finalConnectRule{width:72px!important;height:2px!important;margin:12px auto!important;background:linear-gradient(90deg,transparent,#79baff,transparent)!important;}
+  #home .finalConnectCopy p{font-size:10px!important;line-height:1.48!important;margin:0!important;color:rgba(231,241,251,.78)!important;}
+  #home .homeSocials{width:184px!important;display:flex!important;flex-direction:column!important;gap:12px!important;margin:0!important;align-items:stretch!important;}
+  #home .homeSocial{
+    width:184px!important;height:60px!important;min-width:184px!important;
+    display:flex!important;align-items:center!important;justify-content:flex-start!important;
+    padding:0 14px!important;gap:12px!important;border-radius:16px!important;
+    text-decoration:none!important;color:#f5faff!important;font-size:25px!important;
+    border:1px solid rgba(136,199,255,.32)!important;
+    background:linear-gradient(110deg,rgba(15,42,70,.96),rgba(17,52,88,.82))!important;
+    box-shadow:0 12px 30px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.07)!important;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s!important;
+  }
+  #home .homeSocial i{width:32px!important;text-align:center!important;filter:drop-shadow(0 0 9px rgba(114,190,255,.25))!important;}
+  #home .homeSocial::before{display:none!important;}
+  #home .homeSocial::after{position:static!important;transform:none!important;font-family:Inter,system-ui,sans-serif!important;font-size:12px!important;font-weight:800!important;letter-spacing:.03em!important;text-transform:none!important;color:#edf7ff!important;}
+  #home .homeSocial.email::after{content:'Email'!important;}
+  #home .homeSocial.linkedin::after{content:'LinkedIn'!important;}
+  #home .homeSocial.x::after{content:'X / Twitter'!important;}
+  #home .homeSocial.email:hover{background:linear-gradient(110deg,rgba(26,76,118,.98),rgba(24,57,92,.9))!important;}
+  #home .homeSocial.linkedin:hover{background:linear-gradient(110deg,rgba(15,91,151,.98),rgba(18,61,100,.9))!important;}
+  #home .homeSocial.x:hover{background:linear-gradient(110deg,rgba(42,57,76,.98),rgba(15,38,64,.92))!important;}
+  #home .homeSocial:hover{transform:translateX(-7px) scale(1.045)!important;border-color:rgba(141,215,255,.78)!important;box-shadow:0 17px 38px rgba(0,0,0,.30),0 0 26px rgba(69,157,255,.20)!important;}
+}
