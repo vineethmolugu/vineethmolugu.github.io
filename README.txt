@@ -10,3 +10,5 @@ Changes from V12:
 - Corrected the home metric label to “Server Deployments”.
 
 Upload every file/folder in this package to the root of vineethmolugu.github.io and replace the existing versions.
+
+V14: Home/About/Experience/Work/Expertise/Contact moved to a large right-side vertical glass navigation with icons + text, animated hover/active states, and a softer light-sweep + blur/fade page transition.

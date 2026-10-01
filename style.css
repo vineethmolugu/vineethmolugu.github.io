@@ -460,3 +460,25 @@ body.route-leaving main>section.route-active,body.route-leaving main>.ticker.rou
 @keyframes socialFloat{0%,100%{translate:0 0}50%{translate:0 -4px}}
 @media(max-width:700px){.homeSocials{gap:12px;margin-top:20px}.homeSocial{width:52px;height:52px}.homeSocial i{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.homeSocial{animation:none}}
+
+/* V14 premium right-side navigation */
+.sideNav,.side-nav,.verticalNav,.vertical-nav{display:none!important}
+header nav.rightRail{position:fixed!important;right:24px!important;left:auto!important;top:50%!important;transform:translateY(-50%)!important;z-index:9500!important;display:flex!important;flex-direction:column!important;gap:9px!important;padding:12px!important;background:rgba(6,20,36,.62)!important;backdrop-filter:blur(20px) saturate(150%)!important;border:1px solid rgba(125,194,255,.22)!important;border-radius:24px!important;box-shadow:0 22px 65px rgba(0,0,0,.32),inset 0 1px rgba(255,255,255,.06)!important}
+header nav.rightRail a{width:180px!important;height:60px!important;padding:0 16px!important;display:flex!important;align-items:center!important;gap:14px!important;border-radius:16px!important;color:#e8f4ff!important;text-decoration:none!important;opacity:.72!important;border:1px solid transparent!important;transition:.34s cubic-bezier(.2,.8,.2,1)!important}
+header nav.rightRail a::after{display:none!important}
+header nav.rightRail a:hover{opacity:1!important;transform:translateX(-10px) scale(1.04)!important;background:linear-gradient(105deg,rgba(75,146,255,.25),rgba(75,220,255,.10))!important;border-color:rgba(119,199,255,.42)!important;box-shadow:0 10px 35px rgba(44,129,255,.18)!important}
+header nav.rightRail a.active{opacity:1!important;transform:translateX(-8px)!important;background:linear-gradient(105deg,rgba(69,137,255,.38),rgba(74,213,255,.15))!important;border-color:rgba(130,205,255,.55)!important;box-shadow:0 0 30px rgba(65,149,255,.24)!important}
+.railIcon{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;font-size:24px;font-weight:900;background:rgba(255,255,255,.07);border:1px solid rgba(168,218,255,.18);transition:.34s cubic-bezier(.2,.8,.2,1)}
+.rightRail a:hover .railIcon,.rightRail a.active .railIcon{transform:rotate(-7deg) scale(1.1);background:rgba(103,188,255,.19);box-shadow:0 0 18px rgba(91,187,255,.2)}
+.rightRail a span:last-child{font-size:14px;font-weight:800;letter-spacing:.045em;white-space:nowrap}
+@media(min-width:1100px){body.route-mode main{padding-right:220px}}
+@media(max-width:1099px){header nav.rightRail{right:10px!important;padding:7px!important}.rightRail a span:last-child{display:none}.rightRail a{width:50px!important;height:50px!important;padding:0!important;justify-content:center!important}body.route-mode main{padding-right:68px}}
+
+/* Smooth cinematic page transition — no solid wipe */
+body.route-mode main > section.route-active,body.route-mode main > .ticker.route-active{animation:v14Enter .8s cubic-bezier(.16,1,.3,1) both!important}
+@keyframes v14Enter{0%{opacity:0;transform:translateY(26px) scale(.978);filter:blur(9px)}55%{opacity:.78;filter:blur(1px)}100%{opacity:1;transform:none;filter:none}}
+.routeTransition{background:transparent!important;transform:none!important;overflow:hidden}
+.routeTransition::before{content:"";position:absolute;inset:-20%;background:linear-gradient(100deg,transparent 30%,rgba(83,153,255,.08) 42%,rgba(112,218,255,.22) 50%,rgba(83,153,255,.07) 58%,transparent 70%);transform:translateX(-125%) skewX(-9deg)}
+.routeTransition.go{animation:none!important}
+.routeTransition.go::before{animation:v14Sweep .7s cubic-bezier(.65,0,.25,1)}
+@keyframes v14Sweep{0%{transform:translateX(-125%) skewX(-9deg);opacity:0}20%{opacity:1}100%{transform:translateX(125%) skewX(-9deg);opacity:0}}
