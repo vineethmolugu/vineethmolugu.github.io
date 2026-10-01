@@ -26,3 +26,5 @@ V20 FINAL: Contact page removed. Header navigation is positioned inside the top 
 V21: Moved the existing Email, LinkedIn and X icons out of the upper-left area. The final catchline and supporting sentence now sit in the marked lower-center/right area, with the three large social icons directly underneath.
 
 V22: Styled the final connection message as a premium glass/accent panel directly above Email/LinkedIn/X. Added subtle entrance reveal, blue gradient emphasis on 'rack, cutover & challenge.', animated light sheen, accent line, and coordinated icon entrance.
+
+V25: Desktop connection CTA moved to a narrow vertical glass panel in the empty right side of Home. Catchline remains above three stacked, labeled Email/LinkedIn/X buttons with hover motion and glow. Header navigation remains centered.

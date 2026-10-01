@@ -1080,3 +1080,88 @@ body > nav.rightRail a:hover{
   .finalConnectBlock .finalConnectTitle{font-size:26px!important}
   .finalConnectBlock .finalConnectCopy p{font-size:13px!important}
 }
+
+/* ===== V25 RIGHT-SIDE VERTICAL CONNECT PANEL ===== */
+/* Desktop: use the intentionally empty right side of the Home hero. */
+@media(min-width:1101px){
+  #home.hero{
+    min-height:100svh!important;
+    padding-bottom:120px!important;
+  }
+  .finalConnectBlock{
+    position:absolute!important;
+    left:auto!important;
+    right:2.4vw!important;
+    top:50%!important;
+    bottom:auto!important;
+    transform:translateY(-43%)!important;
+    width:245px!important;
+    max-width:245px!important;
+    align-items:stretch!important;
+    z-index:120!important;
+  }
+  .finalConnectBlock .finalConnectCopy{
+    width:100%!important;
+    margin:0 0 18px!important;
+    padding:22px 18px 20px!important;
+    text-align:left!important;
+    border-top:1px solid rgba(122,190,255,.48)!important;
+    border-left:1px solid rgba(122,190,255,.34)!important;
+    border-radius:18px!important;
+    background:linear-gradient(145deg,rgba(8,26,47,.88),rgba(17,49,82,.68),rgba(8,24,43,.78))!important;
+    box-shadow:0 22px 55px rgba(0,0,0,.30),0 0 34px rgba(64,151,255,.10)!important;
+  }
+  .finalConnectBlock .finalConnectTitle{
+    font-size:25px!important;
+    line-height:1.10!important;
+  }
+  .finalConnectBlock .finalConnectRule{
+    width:92px!important;
+    margin:14px 0 12px!important;
+  }
+  .finalConnectBlock .finalConnectCopy p{
+    margin:0!important;
+    max-width:none!important;
+    font-size:12px!important;
+    line-height:1.55!important;
+  }
+  .finalConnectBlock .homeSocials{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:12px!important;
+    margin:0!important;
+  }
+  .finalConnectBlock .homeSocial{
+    width:100%!important;
+    height:58px!important;
+    min-width:0!important;
+    border-radius:15px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:14px!important;
+    padding:0 17px!important;
+    font-size:23px!important;
+    text-decoration:none!important;
+    background:linear-gradient(100deg,rgba(12,35,59,.90),rgba(18,53,88,.62))!important;
+    border:1px solid rgba(133,194,255,.30)!important;
+    box-shadow:0 12px 28px rgba(0,0,0,.20)!important;
+  }
+  .finalConnectBlock .homeSocial::after{
+    font-family:Inter,system-ui,sans-serif!important;
+    font-size:13px!important;
+    font-weight:800!important;
+    letter-spacing:.02em!important;
+    color:#eef7ff!important;
+  }
+  .finalConnectBlock .homeSocial.email::after{content:'Email'!important}
+  .finalConnectBlock .homeSocial.linkedin::after{content:'LinkedIn'!important}
+  .finalConnectBlock .homeSocial.x::after{content:'X / Twitter'!important}
+  .finalConnectBlock .homeSocial:hover{
+    transform:translateX(-9px) scale(1.045)!important;
+    border-color:rgba(127,205,255,.78)!important;
+    box-shadow:0 17px 36px rgba(37,132,255,.24),0 0 24px rgba(85,180,255,.13)!important;
+  }
+}
