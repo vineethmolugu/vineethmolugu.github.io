@@ -1165,3 +1165,107 @@ body > nav.rightRail a:hover{
     box-shadow:0 17px 36px rgba(37,132,255,.24),0 0 24px rgba(85,180,255,.13)!important;
   }
 }
+
+/* ===== V26 — CONNECT PANEL IN THE EMPTY RIGHT GUTTER ===== */
+@media(min-width:1101px){
+  /* Main reserves ~220px on desktop; intentionally use that empty gutter. */
+  .finalConnectBlock{
+    left:auto!important;
+    right:-214px!important;
+    top:48%!important;
+    bottom:auto!important;
+    transform:translateY(-44%)!important;
+    width:190px!important;
+    max-width:190px!important;
+    align-items:center!important;
+    z-index:180!important;
+  }
+  .finalConnectBlock .finalConnectCopy{
+    width:190px!important;
+    margin:0 0 18px!important;
+    padding:18px 14px 16px!important;
+    text-align:center!important;
+    border:1px solid rgba(119,190,255,.25)!important;
+    border-radius:20px!important;
+    background:linear-gradient(155deg,rgba(10,29,51,.94),rgba(13,40,69,.82))!important;
+    box-shadow:0 20px 50px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.06), 0 0 30px rgba(74,153,255,.08)!important;
+    backdrop-filter:blur(18px) saturate(140%)!important;
+  }
+  .finalConnectBlock .finalConnectTitle{
+    font-size:21px!important;
+    line-height:1.10!important;
+    letter-spacing:-.025em!important;
+  }
+  .finalConnectBlock .finalConnectTitle em{
+    display:inline-block!important;
+    margin-top:4px!important;
+    color:#7fb2ff!important;
+    text-shadow:0 0 22px rgba(93,163,255,.20)!important;
+  }
+  .finalConnectBlock .finalConnectRule{
+    width:68px!important;
+    height:2px!important;
+    margin:12px auto 11px!important;
+    background:linear-gradient(90deg,transparent,#75b5ff,transparent)!important;
+  }
+  .finalConnectBlock .finalConnectCopy p{
+    margin:0!important;
+    font-size:10.5px!important;
+    line-height:1.48!important;
+    color:rgba(226,238,250,.76)!important;
+  }
+  .finalConnectBlock .homeSocials{
+    width:190px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    gap:14px!important;
+  }
+  .finalConnectBlock .homeSocial{
+    position:relative!important;
+    width:76px!important;
+    height:76px!important;
+    min-width:76px!important;
+    padding:0!important;
+    border-radius:24px!important;
+    justify-content:center!important;
+    overflow:visible!important;
+    font-size:30px!important;
+    color:#f4f9ff!important;
+    background:linear-gradient(145deg,rgba(23,55,88,.96),rgba(8,27,48,.94))!important;
+    border:1px solid rgba(141,205,255,.38)!important;
+    box-shadow:0 15px 34px rgba(0,0,0,.30), inset 0 1px rgba(255,255,255,.08), 0 0 0 5px rgba(72,143,224,.035)!important;
+    transition:transform .32s cubic-bezier(.2,.8,.2,1), box-shadow .32s ease, border-color .32s ease!important;
+  }
+  .finalConnectBlock .homeSocial::before{
+    content:''!important;
+    position:absolute!important;
+    inset:-1px!important;
+    border-radius:24px!important;
+    background:linear-gradient(135deg,rgba(119,196,255,.34),transparent 42%,rgba(100,139,255,.20))!important;
+    opacity:.45!important;
+    pointer-events:none!important;
+  }
+  .finalConnectBlock .homeSocial::after{
+    position:absolute!important;
+    left:50%!important;
+    top:calc(100% + 5px)!important;
+    transform:translateX(-50%)!important;
+    white-space:nowrap!important;
+    font-family:Inter,system-ui,sans-serif!important;
+    font-size:9px!important;
+    font-weight:800!important;
+    letter-spacing:.12em!important;
+    text-transform:uppercase!important;
+    color:rgba(213,231,249,.72)!important;
+  }
+  .finalConnectBlock .homeSocial.email::after{content:'Email'!important}
+  .finalConnectBlock .homeSocial.linkedin::after{content:'LinkedIn'!important}
+  .finalConnectBlock .homeSocial.x::after{content:'X / Twitter'!important}
+  .finalConnectBlock .homeSocial i{position:relative!important;z-index:2!important;filter:drop-shadow(0 0 10px rgba(116,190,255,.20))!important}
+  .finalConnectBlock .homeSocial:hover{
+    transform:translateY(-5px) scale(1.09)!important;
+    border-color:rgba(137,215,255,.82)!important;
+    box-shadow:0 20px 40px rgba(0,0,0,.34),0 0 30px rgba(69,157,255,.24),inset 0 1px rgba(255,255,255,.13)!important;
+  }
+}
