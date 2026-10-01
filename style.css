@@ -1425,3 +1425,68 @@ body > nav.rightRail a:hover{
   #home .finalConnectTitle{font-size:29px!important;}
   #home .finalConnectCopy p{font-size:13px!important;}
 }
+
+/* ===== V30 — APPROVED HERO CONTACT PANEL / CURVED CYAN EDGE ===== */
+@media (min-width:1100px){
+  body.route-mode main{padding-right:clamp(360px,24vw,410px)!important;}
+  #home .finalConnectBlock{
+    left:100%!important; top:0!important; bottom:0!important;
+    width:clamp(360px,24vw,410px)!important; max-width:none!important;
+    padding:clamp(68px,8vh,92px) 42px 42px 58px!important;
+    justify-content:center!important; gap:30px!important;
+    clip-path:polygon(8% 0,100% 0,100% 100%,8% 100%,3% 88%,1% 76%,5% 64%,9% 52%,5% 40%,2% 27%,6% 14%)!important;
+    border-left:0!important;
+    background:
+      radial-gradient(circle at 93% 12%,rgba(14,108,255,.31),transparent 28%),
+      radial-gradient(circle at 86% 86%,rgba(0,115,255,.27),transparent 32%),
+      linear-gradient(150deg,#03162e 0%,#052a5b 53%,#03172f 100%)!important;
+    box-shadow:-26px 0 52px rgba(0,0,0,.18),inset 18px 0 42px rgba(0,130,255,.08)!important;
+  }
+  #home .finalConnectBlock::before{display:none!important;}
+  #home .finalConnectBlock::after{
+    right:-70px!important; bottom:-80px!important; width:350px!important; height:350px!important;
+    background:
+      repeating-radial-gradient(circle at center,transparent 0 13px,rgba(48,149,255,.15) 14px 15px),
+      repeating-conic-gradient(from 0deg,rgba(55,154,255,.10) 0 1deg,transparent 1deg 12deg)!important;
+    opacity:.8!important;
+  }
+  #home .contactCurveGlow{
+    display:block!important; position:absolute!important; z-index:4!important;
+    left:-2px!important; top:0!important; width:72px!important; height:100%!important;
+    overflow:visible!important; pointer-events:none!important;
+    filter:drop-shadow(0 0 6px #20c8ff) drop-shadow(0 0 14px rgba(26,143,255,.85));
+  }
+  #home .contactCurveGlow path{
+    fill:none!important; stroke:#35d6ff!important; stroke-width:3.2!important; vector-effect:non-scaling-stroke!important;
+  }
+  #home .finalConnectCopy{z-index:5!important;padding-left:6px!important;}
+  #home .finalConnectCopy::before{width:64px!important;margin-bottom:20px!important;background:linear-gradient(90deg,#34e4ff,#4b7fff,transparent)!important;}
+  #home .finalConnectTitle{font-size:clamp(31px,2.1vw,37px)!important;line-height:1.08!important;letter-spacing:-.04em!important;}
+  #home .finalConnectTitle em{margin-top:4px!important;color:#73a8ff!important;}
+  #home .finalConnectRule{width:174px!important;margin:24px 0 22px!important;background:linear-gradient(90deg,#d7f4ff,rgba(130,200,255,.38),transparent)!important;}
+  #home .finalConnectCopy p{max-width:290px!important;font-size:15px!important;line-height:1.55!important;}
+  #home .homeSocials{z-index:5!important;gap:16px!important;padding-left:4px!important;}
+  #home .homeSocial{height:96px!important;grid-template-columns:80px 1fr 26px!important;gap:18px!important;padding:0 2px!important;}
+  #home .homeSocial i{
+    width:72px!important;height:72px!important;font-size:31px!important;
+    border:2px solid #2bd2ff!important;
+    background:radial-gradient(circle at 35% 28%,rgba(44,155,255,.38),rgba(4,25,55,.94) 68%)!important;
+    box-shadow:0 0 0 5px rgba(29,117,255,.06),0 0 15px #19c9ff,0 0 34px rgba(25,118,255,.56),inset 0 0 20px rgba(39,150,255,.16)!important;
+  }
+  #home .homeSocial.email::before{content:'Get in touch\A Email'!important;}
+  #home .homeSocial.linkedin::before{content:"Let’s connect\A LinkedIn"!important;}
+  #home .homeSocial.x::before{content:'Follow me\A X / Twitter'!important;}
+  #home .homeSocial.email::before,#home .homeSocial.linkedin::before,#home .homeSocial.x::before{
+    white-space:pre!important;font-size:13px!important;line-height:1.75!important;font-weight:500!important;
+  }
+  #home .homeSocial::after{font-size:29px!important;}
+}
+@media (min-width:1100px) and (max-height:780px){
+  #home .finalConnectBlock{padding-top:48px!important;padding-bottom:26px!important;gap:16px!important;}
+  #home .finalConnectTitle{font-size:29px!important;}
+  #home .finalConnectRule{margin:16px 0!important;}
+  #home .finalConnectCopy p{font-size:13px!important;}
+  #home .homeSocials{gap:7px!important;}
+  #home .homeSocial{height:76px!important;grid-template-columns:66px 1fr 24px!important;}
+  #home .homeSocial i{width:60px!important;height:60px!important;font-size:26px!important;}
+}

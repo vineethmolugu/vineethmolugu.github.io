@@ -17,3 +17,5 @@ GitHub Pages update:
 3. Keep the assets folder and resume file.
 4. Commit changes.
 5. Wait for Pages deployment to finish, then hard refresh (Ctrl+Shift+R).
+
+V30 matches the approved first-page reference: full-height right contact panel, curved cyan glowing divider, integrated contact rows, centered header navigation.
