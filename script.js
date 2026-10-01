@@ -35,3 +35,15 @@ if(motionOK){
   addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(depth);ticking=true}},{passive:true});
   depth();
 }
+
+
+// V36: make the scroll choreography clearly visible while remaining smooth.
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const cinematic=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('show'); }
+      else if(entry.boundingClientRect.top > window.innerHeight * .82){ entry.target.classList.remove('show'); }
+    });
+  },{threshold:.16,rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>cinematic.observe(el));
+}
