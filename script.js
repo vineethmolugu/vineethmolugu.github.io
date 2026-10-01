@@ -1,1 +1,9 @@
 const roles=['Server Hardware • Break/Fix • Remote Hands','Network Engineering • Arista • Cisco','Fiber Optics • SMF/MMF • OTDR','Rack & Stack • Power • Data Center Operations'];let r=0,c=0,d=false,t=document.querySelector('#typed');function type(){let s=roles[r];t.textContent=s.slice(0,c);if(!d&&c<s.length){c++;setTimeout(type,48)}else if(!d){d=true;setTimeout(type,1350)}else if(c>0){c--;setTimeout(type,24)}else{d=false;r=(r+1)%roles.length;setTimeout(type,250)}}setTimeout(type,800);const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');o.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>o.observe(e));let done=false;new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;document.querySelectorAll('[data-n]').forEach(e=>{let n=+e.dataset.n,s=performance.now();function a(x){let p=Math.min((x-s)/1000,1);e.textContent=Math.floor(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(a)}requestAnimationFrame(a)})}},{threshold:.25}).observe(document.querySelector('.metrics'));addEventListener('scroll',()=>document.querySelector('#progress').style.width=scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%');document.querySelector('#year').textContent=new Date().getFullYear();
+const scene=document.querySelector('.rackScene');
+if(scene && matchMedia('(pointer:fine)').matches){
+  document.querySelector('.hero').addEventListener('mousemove',e=>{
+    const x=(e.clientX/innerWidth-.5)*5,y=(e.clientY/innerHeight-.5)*4;
+    scene.style.transform=`rotateY(${-5+x}deg) rotateX(${-y}deg)`;
+  });
+  document.querySelector('.hero').addEventListener('mouseleave',()=>scene.style.transform='rotateY(-5deg)');
+}

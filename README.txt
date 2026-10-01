@@ -1,11 +1,14 @@
-Vineeth Portfolio V4 — Bright Edition
+VINEETH PORTFOLIO V5 — CALM TECH
 
-Based on the latest resume provided.
+Changes from V4:
+- Removed the stock server-rack hero photograph.
+- Removed the two floating role cards.
+- Added a custom CSS-built server/network/fiber infrastructure visual.
+- Rebalanced the hero alignment.
+- Replaced plain white with calm blue-gray gradients and a subtle technical grid.
+- Added gentle ambient motion/parallax while retaining typing, counters and scroll reveals.
+- Kept the resume-grounded content and public contact links from V4.
 
-Public links included:
-Email: vineethmolugu171299@gmail.com
-LinkedIn: https://www.linkedin.com/in/vineeth-molugu-15a026268/
-X/Twitter: @vineethkum17
-
-Upload all four files to the root of vineethmolugu/vineethmolugu.github.io and commit.
-The phone number from the resume is intentionally not published.
+DEPLOY:
+Upload index.html, style.css, script.js and README.txt to the root of
+vineethmolugu/vineethmolugu.github.io and commit the changes.
