@@ -1549,3 +1549,21 @@ body > nav.rightRail a:hover{
   #home .homeSocial strong{font-size:18px!important;}
   #home .homeSocial small{font-size:10px!important;}
 }
+
+/* ===== V32 — seamless blended contact area ===== */
+@media (min-width:1100px){
+  #home .contactCurveGlow{display:none!important;}
+  #home .finalConnectBlock{
+    border:0!important;
+    box-shadow:none!important;
+    background:
+      radial-gradient(circle at 100% 12%,rgba(30,105,235,.30),transparent 34%),
+      radial-gradient(circle at 94% 88%,rgba(0,104,230,.22),transparent 38%),
+      linear-gradient(90deg,rgba(3,17,34,0) 0%,rgba(4,23,47,.18) 10%,rgba(5,35,77,.66) 35%,rgba(5,38,86,.92) 72%,rgba(4,30,67,.98) 100%)!important;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 8%,#000 28%,#000 100%)!important;
+    mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 8%,#000 28%,#000 100%)!important;
+    width:430px!important;max-width:430px!important;padding-left:72px!important;
+  }
+  #home .finalConnectBlock::before{opacity:.28!important;}
+  #home .finalConnectBlock::after{opacity:.48!important;}
+}
