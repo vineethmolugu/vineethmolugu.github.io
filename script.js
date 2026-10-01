@@ -24,3 +24,12 @@ if(hero && matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)
     hero.style.setProperty('--my',`${y*8}px`);
   });
 }
+
+// V8 ambient cursor glow
+if(matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
+  const glow=document.createElement('div');
+  glow.id='ambientGlow'; document.body.appendChild(glow);
+  addEventListener('pointermove',e=>{
+    glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px';
+  },{passive:true});
+}

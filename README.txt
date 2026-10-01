@@ -1,19 +1,15 @@
-VINEETH PORTFOLIO V7 — IMMERSIVE + TRANSITIONS
+VINEETH PORTFOLIO V8 — DEEP INFRASTRUCTURE + EFFECTS
 
-Keeps the immersive data-center background from V6 and adds:
-- staggered hero entrance animation
-- smoother scroll reveal with subtle blur
-- alternating project-card slide-ins
-- gentle background zoom
-- hover lift on project/credential cards and buttons
-- animated sticky-header state
-- scroll progress bar
-- existing typing animation and number counters
-- reduced-motion accessibility support
+Changes:
+- Removed the large white/light content-panel appearance across the portfolio.
+- Deep navy / blue-gray data-center visual language throughout.
+- Translucent infrastructure cards instead of white cards.
+- Subtle network grid and moving trace atmosphere.
+- Stronger staggered scroll reveals.
+- Alternating slide-in experience/project sections.
+- Animated section trace lines.
+- Mouse-reactive ambient glow on desktop.
+- Existing typing, counters, progress bar, hero motion and hover effects retained.
+- Reduced-motion accessibility retained.
 
-Upload all 5 files to the repository root:
-index.html
-style.css
-script.js
-README.txt
-hero-bg.png
+Upload ALL files in this ZIP to the root of your GitHub Pages repository.
