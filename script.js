@@ -8,3 +8,30 @@ document.querySelector('#year').textContent=new Date().getFullYear();
 // Smooth one-page navigation
 const links=[...document.querySelectorAll('.navRoute')];links.forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id?.startsWith('#')){e.preventDefault();document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'',id)}}));
 const sections=['home','about','experience','work','skills'].map(id=>document.getElementById(id)).filter(Boolean);const navObs=new IntersectionObserver(es=>{const visible=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!visible)return;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+visible.target.id));},{rootMargin:'-20% 0px -65% 0px',threshold:[0,.1,.3]});sections.forEach(s=>navObs.observe(s));
+
+// V35 premium scroll motion: replay reveals, subtle hero depth, active-section polish.
+const motionOK=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(motionOK){
+  const replayObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('show');
+    else if(entry.boundingClientRect.top>innerHeight*.88) entry.target.classList.remove('show');
+  }),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>replayObserver.observe(el));
+
+  let ticking=false;
+  const depth=()=>{
+    const y=window.scrollY;
+    const hero=document.querySelector('#home.hero');
+    const copy=document.querySelector('#home .heroCopy');
+    const connect=document.querySelector('#home .finalConnectBlock');
+    if(hero && y < innerHeight*1.15){
+      const p=Math.min(y/innerHeight,1);
+      if(copy) copy.style.transform=`translate3d(0,${p*16}px,0)`;
+      if(connect && innerWidth>=1100) connect.style.transform=`translateY(calc(-48% + ${p*10}px))`;
+      hero.style.backgroundPosition=`center calc(50% + ${p*12}px)`;
+    }
+    ticking=false;
+  };
+  addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(depth);ticking=true}},{passive:true});
+  depth();
+}

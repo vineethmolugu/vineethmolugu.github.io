@@ -19,3 +19,7 @@ GitHub Pages update:
 5. Wait for Pages deployment to finish, then hard refresh (Ctrl+Shift+R).
 
 V30 matches the approved first-page reference: full-height right contact panel, curved cyan glowing divider, integrated contact rows, centered header navigation.
+
+V34: Added a soft dark navy blended backdrop behind the hero contact area. It fades into the data-center image instead of appearing as a hard panel/partition, while preserving the glowing contact icons and legibility.
+
+V35: Added premium scroll reveal, stagger, subtle hero depth/parallax, card image settle, header polish and contact hover motion. Respects reduced-motion accessibility.

@@ -1608,3 +1608,44 @@ body.route-mode .home-extra,body.route-mode .about-extra,body.route-mode .skills
   body{padding-top:0!important}.route-mode main>section,.route-mode main>.ticker{display:block!important}
   #home .finalConnectBlock{position:relative!important;inset:auto!important;transform:none!important;width:auto!important;max-width:none!important;margin:35px 0 0!important;mask-image:none!important;-webkit-mask-image:none!important}
 }
+
+/* ===== V34 — DARK BLENDED CONTACT FOCUS ===== */
+@media (min-width:1100px){
+  #home .finalConnectBlock{
+    padding:32px 24px 30px 42px!important;
+    background:
+      radial-gradient(ellipse at 58% 48%,rgba(4,16,33,.88) 0%,rgba(4,18,38,.74) 38%,rgba(5,23,49,.46) 64%,rgba(5,24,48,0) 100%),
+      linear-gradient(90deg,rgba(3,14,29,0) 0%,rgba(3,15,31,.34) 22%,rgba(3,15,31,.72) 58%,rgba(3,15,31,.82) 100%)!important;
+    border-radius:42px 0 0 42px!important;
+    box-shadow:none!important;
+  }
+  #home .finalConnectBlock::before{
+    inset:-48px -70px -48px -85px!important;
+    background:radial-gradient(ellipse at 70% 50%,rgba(0,8,20,.64) 0%,rgba(3,18,38,.44) 48%,transparent 78%)!important;
+    filter:blur(10px)!important;
+    opacity:1!important;
+  }
+  #home .finalConnectBlock::after{opacity:.25!important;filter:blur(.2px)!important}
+  #home .homeSocial i{background:radial-gradient(circle at 35% 28%,rgba(45,150,255,.34),rgba(2,13,29,.97) 70%)!important;box-shadow:0 0 0 4px rgba(29,117,255,.05),0 0 13px rgba(25,201,255,.8),0 0 30px rgba(25,118,255,.42),inset 0 0 20px rgba(39,150,255,.15)!important}
+}
+
+/* ===== V35 — PREMIUM SCROLL MOTION ===== */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translate3d(0,34px,0) scale(.985);filter:blur(5px);transition:opacity .82s cubic-bezier(.2,.75,.2,1),transform .9s cubic-bezier(.16,1,.3,1),filter .7s ease!important;will-change:transform,opacity,filter}
+  .reveal.show{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+  .section>.reveal:nth-child(2),.two>.reveal:nth-child(2),.skills .reveal:nth-child(2),.credGrid .reveal:nth-child(2){transition-delay:.08s!important}
+  .skills .reveal:nth-child(3),.credGrid .reveal:nth-child(3){transition-delay:.16s!important}
+  .skills .reveal:nth-child(4){transition-delay:.24s!important}
+  .jobs article.reveal,.case.reveal{transform:translate3d(0,52px,0) scale(.975)}
+  .jobs article.reveal.show,.case.reveal.show{transform:translate3d(0,0,0) scale(1)}
+  .case .casePhoto{transition:transform 1.05s cubic-bezier(.16,1,.3,1),filter .8s ease!important;transform:scale(1.035)}
+  .case.show .casePhoto{transform:scale(1)}
+  header{transition:background .35s ease,box-shadow .35s ease,border-color .35s ease!important}
+  header.scrolled{background:rgba(3,14,29,.985)!important;box-shadow:0 12px 34px rgba(0,0,0,.26)!important}
+  #home .finalConnectBlock{transition:transform .65s cubic-bezier(.16,1,.3,1),filter .65s ease!important}
+  #home .homeSocial{transition:transform .32s cubic-bezier(.16,1,.3,1),filter .32s ease!important}
+  #home .homeSocial:hover{transform:translateX(8px)!important;filter:brightness(1.14)}
+  #home .homeSocial:hover i{transform:scale(1.06);transition:transform .32s cubic-bezier(.16,1,.3,1)!important}
+  .section,.work,.feature,.credentials{--scroll-shift:0px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
