@@ -18,3 +18,5 @@ V15: right navigation moved lower toward the middle-right. Added cinematic blur/
 V16 FINAL: individual right-side menu items now zoom to 115% on hover with brighter icon/text, blue glow, and smooth inward motion. Includes V15 lower-right menu placement and premium page transitions.
 
 FINAL V16.1: User-facing CV wording changed to Resume for U.S. technical job applications.
+
+V17: Fixed right navigation placement by moving it outside the header. It is now viewport-positioned in the center-right/lower-right hero area shown in the user's markup.

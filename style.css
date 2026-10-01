@@ -575,3 +575,53 @@ header nav.rightRail a:not(:hover){
     transform:translateX(-8px) scale(1.10)!important;
   }
 }
+
+
+/* V17 FINAL POSITION FIX
+   Navigation is now a direct viewport-fixed rail, positioned in the
+   center-right / slightly lower area requested in the marked screenshot. */
+body > nav.rightRail{
+  position:fixed!important;
+  top:62vh!important;
+  right:4.2vw!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:translateY(-50%)!important;
+  z-index:9990!important;
+  max-height:calc(100vh - 110px)!important;
+}
+
+/* Preserve premium hover behavior after moving nav outside header */
+body > nav.rightRail a{
+  transform-origin:right center!important;
+  will-change:transform,filter,box-shadow;
+}
+body > nav.rightRail a:hover{
+  opacity:1!important;
+  transform:translateX(-18px) scale(1.15)!important;
+  background:linear-gradient(105deg,rgba(67,145,255,.38),rgba(70,214,255,.18))!important;
+  border-color:rgba(139,215,255,.72)!important;
+  box-shadow:0 16px 44px rgba(33,125,255,.28),0 0 28px rgba(88,196,255,.18)!important;
+  filter:brightness(1.16)!important;
+  z-index:3!important;
+}
+body > nav.rightRail a:hover .railIcon{
+  transform:rotate(-6deg) scale(1.16)!important;
+  background:rgba(110,198,255,.25)!important;
+  border-color:rgba(170,229,255,.68)!important;
+  box-shadow:0 0 22px rgba(87,190,255,.35)!important;
+}
+body > nav.rightRail a:hover span:last-child{
+  letter-spacing:.075em!important;
+  text-shadow:0 0 18px rgba(155,221,255,.38)!important;
+}
+
+@media(max-width:1099px){
+  body > nav.rightRail{
+    top:62vh!important;
+    right:18px!important;
+  }
+  body > nav.rightRail a:hover{
+    transform:translateX(-8px) scale(1.10)!important;
+  }
+}
