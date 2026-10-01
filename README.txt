@@ -21,4 +21,4 @@ FINAL V16.1: User-facing CV wording changed to Resume for U.S. technical job app
 
 V17: Fixed right navigation placement by moving it outside the header. It is now viewport-positioned in the center-right/lower-right hero area shown in the user's markup.
 
-V18: Removed the standalone Contact page and Contact navigation item. Added an integrated Home connection area with a catchline and large, clearly labeled Email, LinkedIn, and X cards. Right-side navigation was enlarged for clarity while retaining zoom/glow and page transitions.
+V19 precise correction: Contact page/item removed. Home/About/Experience/Work/Expertise placed horizontally in the marked top-header area between VKM and Download Resume. Existing social icons retained. Added requested 'Ready for the next rack, cutover & challenge.' opportunity copy near the social icons. No contact cards or unrelated home redesign.
