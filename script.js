@@ -24,7 +24,7 @@ if(motionOK){
     const hero=document.querySelector('#home.hero');
     const copy=document.querySelector('#home .heroCopy');
     const connect=document.querySelector('#home .finalConnectBlock');
-    if(hero && y < innerHeight*1.15){
+    if(hero && innerWidth>=1100 && y < innerHeight*1.15){
       const p=Math.min(y/innerHeight,1);
       if(copy) copy.style.transform=`translate3d(0,${p*16}px,0)`;
       if(connect && innerWidth>=1100) connect.style.transform=`translateY(calc(-48% + ${p*10}px))`;
