@@ -7,3 +7,20 @@ if(scene && matchMedia('(pointer:fine)').matches){
   });
   document.querySelector('.hero').addEventListener('mouseleave',()=>scene.style.transform='rotateY(-5deg)');
 }
+
+// V7: smooth header state + gentle hero parallax
+const hdr=document.querySelector('header');
+const hero=document.querySelector('.hero');
+function motionScroll(){
+  hdr?.classList.toggle('scrolled',scrollY>28);
+}
+addEventListener('scroll',motionScroll,{passive:true}); motionScroll();
+
+if(hero && matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches){
+  hero.addEventListener('mousemove',e=>{
+    const r=hero.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    hero.style.setProperty('--mx',`${x*10}px`);
+    hero.style.setProperty('--my',`${y*8}px`);
+  });
+}
